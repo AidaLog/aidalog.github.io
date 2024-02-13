@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
     <style>
-
         html,
         body {
             height: 100%;
@@ -33,6 +32,23 @@
             font-style: normal;
             font-size: 8em;
             color: #2d0c42;
+            padding-left: 50px;
+        }
+
+        /* Media query for screens 600px or smaller */
+        @media screen and (max-width: 600px) {
+            .comfortaa-h1 {
+                font-size: 6em;
+                /* Adjust the font size for smaller screens */
+            }
+        }
+
+        /* Media query for screens 400px or smaller */
+        @media screen and (max-width: 400px) {
+            .comfortaa-h1 {
+                font-size: 4em;
+                /* Further adjust the font size for even smaller screens */
+            }
         }
     </style>
 </head>
@@ -42,6 +58,7 @@
     </div>
     <div style="position: fixed; z-index: 2; top: 50%; left: 20%; transform: translate(-50%, -50%); text-align: left; ">
         <h1 class="comfortaa-h1">Aida</h1>
+    </div>
 </body>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
