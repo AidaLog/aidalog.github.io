@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Contact Form #1</title>
+
+
+  <style>
+    .range-container {
+      position: relative;
+    }
+
+    input[type=range] {
+      width: 300px;
+      margin: 18px 0;
+      -webkit-appearance: none;
+    }
+
+    input[type=range]+label {
+      background-color: #ffffff86;
+      border-radius: 4px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      padding: 5px 0;
+      position: absolute;
+      top: -25px;
+      left: 110px;
+      text-align: center;
+      width: 80px;
+    }
+
+    input[type=range]:active {
+      outline: none;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+      animate: 0.2s;
+      background-color: black;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      height: 7.5px;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      background: #ffffff;
+      border-radius: 50%;
+      border: 1px solid black;
+      cursor: pointer;
+      height: 20px;
+      width: 20px;
+      margin-top: -7px;
+      -webkit-appearance: none;
+    }
+
+    input[type=range]:active::-webkit-slider-runnable-track {
+      opacity: 0.8;
+    }
+
+    input[type=range]::-moz-range-track {
+      animate: 0.2s;
+      background-color: black;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      height: 7.5px;
+    }
+
+    input[type=range]::-moz-range-thumb {
+      background: #ffffff;
+      border-radius: 50%;
+      border: 1px solid black;
+      cursor: pointer;
+      height: 20px;
+      width: 20px;
+    }
+
+    input[type=range]::-ms-track {
+      animate: 0.2s;
+      background-color: black;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      height: 7.5px;
+    }
+
+    input[type=range]::-ms-thumb {
+      background: #ffffff;
+      border-radius: 50%;
+      border: 1px solid black;
+      cursor: pointer;
+      height: 20px;
+      width: 20px;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    input[type=range]:active::-ms-fill-lower {
+      background: black;
+    }
+
+    input[type=range]:active::-ms-fill-upper {
+      background: black;
+    }
+
+
+    select {
+      /* Reset */
+      appearance: none;
+      border: 0;
+      outline: 0;
+      font: inherit;
+      /* Personalize */
+      width: 20rem;
+      padding: 1rem 4rem 1rem 1rem;
+      background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+        linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+      color: white;
+      border-radius: 0.25em;
+      /* box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2); */
+      cursor: pointer;
+
+      /* Remove IE arrow */
+      &::-ms-expand {
+        display: none;
+      }
+
+      /* Remove focus outline */
+      &:focus {
+        outline: none;
+      }
+
+      /* <option> colors */
+      option {
+        color: inherit;
+        background-color: var(--option-bg);
+      }
+    }
+
+    .form-control {
+      padding-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="content">
+
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h2 class="mb-5 font-weight-light">Campus <br> Dropout Prediction</h2>
+
+          <div class="row align-items-center">
+
+            <div class="col-md-5 mb-5">
+              <form id="inputForm" class="form">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="location_name">Location Name:</label>
+                      <select id="location_name" name="location_name" class="form-control data-input">
+                        <option value="0">Rural</option>
+                        <option value="1">Urban</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="home_language">Home Language:</label>
+                      <select id="home_language" name="home_language" class="form-control data-input">
+                        <option value="1">Kiswahili</option>
+                        <option value="2">English</option>
+                        <option value="3">Native language</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="hh_occupation">Household Occupation:</label>
+                      <select id="hh_occupation" name="hh_occupation" class="form-control data-input">
+                        <option value="1">Unemployed</option>
+                        <option value="2">Agriculture</option>
+                        <option value="3">Self-employed</option>
+                        <option value="4">Public sector</option>
+                        <option value="5">Private sector</option>
+                        <option value="6">Housewife</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="hh_edu">Household Education:</label>
+                      <select id="hh_edu" name="hh_edu" class="form-control data-input">
+                        <option value="0">None</option>
+                        <option value="1">Primary</option>
+                        <option value="2">Secondary</option>
+                        <option value="3">Postsecondary</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="gender">Gender:</label>
+                      <select id="gender" name="gender" class="form-control data-input">
+                        <option value="2">Female</option>
+                        <option value="1">Male</option>
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="mothers_edu">Mother's Education:</label>
+                      <select id="mothers_edu" name="mothers_edu" class="form-control data-input">
+                        <option value="0">None</option>
+                        <option value="1">Primary</option>
+                        <option value="2">Secondary</option>
+                        <option value="3">Postsecondary</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- <div class=""> -->
+                  <div class="form-group col-md-6">
+                    <label for="grade">Grade:</label>
+                    <select id="grade" name="grade" class="form-control data-input">
+                      <option value="9">Form One</option>
+                      <option value="10">Form Two</option>
+                      <option value="11">Form Three</option>
+                      <option value="12">Form Four</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <label for="meansToSchool">Means to School:</label>
+                    <select id="meansToSchool" name="meansToSchool" class="form-control data-input">
+                      <option value="1">Walk</option>
+                      <option value="2">Bicycle/motorbike</option>
+                      <option value="3">Public transport</option>
+                      <option value="4">Private car</option>
+                    </select>
+                  </div>
+                  <!-- </div> -->
+                </div>
+              </form>
+            </div>
+
+            <div class="col-md-4 mb-5">
+              <form id="inputForm" class="form">
+
+                <div class="form-group">
+                  <label for="hh_size">Household Size:</label>
+                  <div class="range-container">
+                    <input type="range" id="h_size" class="range data-input" max="20" min="0" value="1">
+                    <label for="range">1</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="school_distanceKm">School Distance (Km):</label>
+                  <div class="range-container">
+                    <input type="range" id="school_distance" class="range data-input" max="100" min="0" value="1">
+                    <label for="range">1</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="age">Age:</label>
+                  <div class="range-container">
+                    <input type="range" id="age" class="range data-input" max="20" min="10" value="11">
+                    <label for="range">11</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="hh_children">Household Children:</label>
+                  <div class="range-container">
+                    <input type="range" id="hh_children" class="range data-input" max="20" min="0" value="1">
+                    <label for="range">1</label>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+            <div class="col-lg-3 text-center">
+              <h3 class="mb-4">Results.</h3>
+              <p><span id="textResult">Waiting for response</span></p>
+              <canvas id="myChart"></canvas>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/main.js"></script>
+
+
+  <script>
+    const range = $('.range');
+
+    range.on('input', (e) => {
+      // Get the label (which is the nextElementSibling)
+      const label = e.target.nextElementSibling;
+      // Get value of the input
+      const value = +e.target.value;
+      // Get the width value of the input
+      const range_width = getComputedStyle(e.target).getPropertyValue('width');
+      // Get the width value of the label
+      const label_width = getComputedStyle(label).getPropertyValue('width');
+      // Remove 'px' and conver to number
+      const num_width = +range_width.substring(0, range_width.length - 2);
+      const num_label_width = +label_width.substring(0, label_width.length - 2);
+      // Get min and max values
+      const max = +e.target.max;
+      const min = +e.target.min;
+      // Calculate the left value
+      const left = value * (num_width / max) - num_label_width / 2 + scale(value, min, max, 10, -10);
+
+      label.style.left = `${left}px`;
+      label.innerHTML = value;
+    });
+
+    // From StackOverflow: https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
+    const scale = (num, in_min, in_max, out_min, out_max) => {
+      return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    }
+  </script>
+
+
+  <script>
+
+    const xhttp = new XMLHttpRequest();
+    const url = 'https://squid-app-avmq9.ondigitalocean.app/';
+
+    var textResult = document.getElementById("textResult");
+
+    var transitData = {};
+
+    // Log the values
+    $(".data-input").on("change", () => {
+      // Select each input by its id
+      var location_name = document.getElementById('location_name').value;
+      var home_language = document.getElementById('home_language').value;
+      var hh_occupation = document.getElementById('hh_occupation').value;
+      var hh_edu = document.getElementById('hh_edu').value;
+      var gender = document.getElementById('gender').value;
+      var mothers_edu = document.getElementById('mothers_edu').value;
+      var grade = document.getElementById('grade').value;
+      var meansToSchool = document.getElementById('meansToSchool').value;
+      var h_size = document.getElementById('h_size').value;
+      var school_distance = document.getElementById('school_distance').value;
+      var age = document.getElementById('age').value;
+      var hh_children = document.getElementById('hh_children').value;
+
+      // Create a data object that maps the input values to those of the JSON
+      var data = {
+        "location_name": parseInt(location_name),
+        "home_language": parseInt(home_language),
+        "hh_occupation": parseInt(hh_occupation),
+        "hh_edu": parseInt(hh_edu),
+        "gender": parseInt(gender),
+        "mothers_edu": parseInt(mothers_edu),
+        "grade": parseInt(grade),
+        "meansToSchool": parseInt(meansToSchool),
+        "hh_size": parseInt(h_size),
+        "school_distanceKm": parseInt(school_distance),
+        "age": parseInt(age),
+        "hh_children": parseInt(hh_children)
+      };
+
+      transitData = data;
+
+
+      callApi(data);
+
+
+    });
+
+    function calculatePercentages(resultObject) {
+      let count1 = 0;
+      let count0 = 0;
+
+      for (const key in resultObject) {
+          if (resultObject[key] === "1") {
+              count1++;
+          } else {
+              count0++;
+          }
+      }
+
+      var totalAlgorithms = Object.keys(resultObject).length;
+      var percentage1 = (count1 / totalAlgorithms) * 100;
+      var percentage0 = (count0 / totalAlgorithms) * 100;
+
+      return [percentage0, percentage1];
+    }
+
+    function callApi(data){
+      textResult.innerHTML = "Working ..."
+      var jsonData = JSON.stringify(data);
+      // Log the data object
+      console.log("data", jsonData);
+
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          // Handle successful response
+          var jsonString = this.responseText;
+          var responseObject = JSON.parse(jsonString);
+          responseObject = responseObject.predictions
+
+          var percentages = calculatePercentages(responseObject);
+
+          // Log the responseObject
+          console.log(responseObject);
+          console.log(percentages);
+
+          updateChart(percentages);
+
+          // display results
+          if(percentages[0]> percentages[1]){
+            textResult.innerHTML = "Dropout";
+          }else{
+            textResult.innerHTML = "Not A Dropout";
+          }
+        } else if (this.readyState == 4) {
+          // Handle error or non-200 status
+          console.error('Error:', this.status);
+          textResult.innerHTML = "⚠ failed to work";
+        }
+      };
+
+      // Open a POST request to the specified URL
+      xhttp.open('POST', url, true);
+
+      // Set the content type
+      xhttp.setRequestHeader('Content-Type', 'application/json');
+
+      // Send the JSON data
+      xhttp.send(jsonData);
+    }
+
+
+    // chart
+    const chart_data = {
+      labels: ['Dropout', 'Not A Dropout'],
+      datasets: [
+        {
+          label: 'Dataset 1',
+          data: [50, 50],
+          backgroundColor: ['Red', 'Green'],
+        }
+      ]
+    };
+
+    const config = {
+      type: 'pie',
+      data: chart_data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'Realtime inference'
+          }
+        }
+      },
+    };
+
+    // chart
+    var ctx = document.getElementById('myChart').getContext('2d');
+
+    // Create a new Chart.js instance
+    var chart = new Chart(ctx, config);
+
+
+    function updateChart(probabilities) {
+        // Update the data
+        chart.data.datasets[0].data = [probabilities[0], probabilities[1]];
+
+        // Update the chart
+        chart.update();
+    }
+
+  </script>
+</body>
+
+</html>
