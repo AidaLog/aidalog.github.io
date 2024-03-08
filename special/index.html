@@ -314,29 +314,30 @@
           </button>
         </div>
         <div class="col-md-10">
-          <div class="my-5 ibm-plex-mono-light" id="board">
-            <!-- loader -->
-            <div div="loader">
-              <div class="blobs">
-                <div class="blob-center"></div>
-                <div class="blob"></div>
-                <div class="blob"></div>
-                <div class="blob"></div>
-                <div class="blob"></div>
-                <div class="blob"></div>
-                <div class="blob"></div>
-              </div>
-              <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                <defs>
-                  <filter id="goo">
-                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
-                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                      result="goo"></feColorMatrix>
-                    <feBlend in="SourceGraphic" in2="goo"></feBlend>
-                  </filter>
-                </defs>
-              </svg>
+          <!-- loader -->
+          <div div="loader">
+            <div class="blobs">
+              <div class="blob-center"></div>
+              <div class="blob"></div>
+              <div class="blob"></div>
+              <div class="blob"></div>
+              <div class="blob"></div>
+              <div class="blob"></div>
+              <div class="blob"></div>
             </div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+              <defs>
+                <filter id="goo">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                    result="goo"></feColorMatrix>
+                  <feBlend in="SourceGraphic" in2="goo"></feBlend>
+                </filter>
+              </defs>
+            </svg>
+          </div>
+          <div class="my-5 ibm-plex-mono-light" id="board">
+            
           </div>
         </div>
       </div>
@@ -374,12 +375,14 @@
       const xhttp = new XMLHttpRequest();
       const url = 'http://api-aida.tech/gemini_api';
       var board = document.getElementById("board");
+      var loader = document.getElementById("loader");
 
       function showLoader() {
-        $("#loader").show();
+        loader.style.display = "block";
+        board.innerHTML = "";
       }
       function hideLoader() {
-        $("#loader").hide();
+        loader.style.display = "none";
       }
 
       var transitData = {
