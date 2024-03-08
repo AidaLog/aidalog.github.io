@@ -145,8 +145,8 @@
       width: 30px;
       height: 30px;
       transform-origin: left top;
-      transform: scale(0.9) translate(-50%, -50%);
-      animation: blob-grow_2 linear 3.4s infinite;
+      transform: scale(0.5) translate(-50%, -50%);
+      animation: blob-grow_2 linear cubic-bezier(0.19, 1, 0.22, 1) infinite;
       border-radius: 50%;
       box-shadow: 0 -10px 40px -5px #1d1d1d;
     }
@@ -315,7 +315,7 @@
         </div>
         <div class="col-md-10">
           <!-- loader -->
-          <div div="loader">
+          <div id="loader">
             <div class="blobs">
               <div class="blob-center"></div>
               <div class="blob"></div>
