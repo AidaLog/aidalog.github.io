@@ -382,7 +382,7 @@
     <script>
 
       const xhttp = new XMLHttpRequest();
-      const url = 'https://api-aida.tech/gemini_api';
+      const url = 'https://api-aida.tech/prime';
       var board = document.getElementById("board");
       var loader = document.getElementById("loader");
 
@@ -394,9 +394,11 @@
         loader.style.display = "none";
       }
 
-      var transitData = {
-        "prompt": "Give me random facts about womans day: write it in a captivating short story format, focus on african heroes. pick one theme from these [health, technology, agriculture, space] Be like Did you know {hero_name} was ..., format names of heroes bolded",
-        "format": "html"
+      var transitData ={
+        "prompt": "Give me random facts about womans day in HTML format: write it in a captivating short story format, focus on african heroes. pick one theme from these [health, technology, agriculture, space] Be like Did you know {hero_name} was ...",
+        "model_name" : "mixtral-8x7b-32768",
+        "temperature": 0.1,
+        "chunk_size_limit" : 512
       };
 
       document.body.onload = () => {
