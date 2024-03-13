@@ -1,37 +1,51 @@
-.radio-inputs {
-    position: relative;
+:focus {
+    outline: 0;
+    border-color: #000000;
+    box-shadow: 0 0 0 4px #b5c9fc39;
+}
+
+.mydict div {
     display: flex;
     flex-wrap: wrap;
-    border-radius: 0.5rem;
-    background-color: #ffffff00;
-    box-sizing: border-box;
-    box-shadow: 0 0 0px 1px rgba(231, 228, 228, 0.06);
-    padding: 0.09rem;
-    width: auto;
+    margin-top: 0.5rem;
 }
 
-.radio-inputs .radio {
-    flex: 1 1 auto;
-    text-align: center;
+.mydict input[type="radio"] {
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
 
-.radio-inputs .radio input {
-    display: none;
-}
-
-.radio-inputs .radio .name {
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.5rem;
-    border: none;
-    padding: .5rem 0;
-    color: rgba(51, 65, 85, 1);
-    transition: all .15s ease-in-out;
-}
-
-.radio-inputs .radio input:checked+.name {
-    background-color: #000000;
+.mydict input[type="radio"]:checked+span {
+    box-shadow: 0 0 0 0.0625em #000000;
+    background-color: #ffffff;
+    z-index: 1;
+    color: #000000;
     font-weight: 600;
+}
+
+label span {
+    display: block;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 0.375em .75em;
+    position: relative;
+    margin-left: .0625em;
+    box-shadow: 0 0 0 0.0625em #b5bfd9;
+    letter-spacing: .05em;
+    color: #000000;
+    text-align: center;
+    transition: background-color .5s ease;
+}
+
+label:first-child span {
+    border-radius: .375em 0 0 .375em;
+}
+
+label:last-child span {
+    border-radius: 0 .375em .375em 0;
 }
