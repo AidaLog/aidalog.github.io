@@ -50,7 +50,6 @@ label:last-child span {
     border-radius: 0 .375em .375em 0;
 }
 
-
 /* Select input */
 select {
     -webkit-appearance: none;
@@ -59,14 +58,15 @@ select {
     appearance: none;
     outline: 0;
     box-shadow: none;
-    border: 0 !important;
-    background: #cae0f5;
+    border: 1 solid black !important;
+    background: #6d87a0;
     background-image: none;
     flex: 1;
     padding: 0 .5em;
     color: #313131;
     cursor: pointer;
     font-size: 1em;
+    width: 100%; /* Add this line */
 }
 
 select::-ms-expand {
@@ -90,7 +90,7 @@ select::-ms-expand {
     top: 0;
     right: 0;
     padding: 0 1em;
-    background: #ededed;
+    background: #000000;
     cursor: pointer;
     pointer-events: none;
     transition: .25s all ease;
