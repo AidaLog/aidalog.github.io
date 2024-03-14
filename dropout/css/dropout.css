@@ -249,3 +249,19 @@ select::-ms-expand {
     right: 15%;
     animation-delay: .3s;
 }
+
+
+/* control display */
+
+#control-display .inherit-cd-height{
+    min-height: 250px;
+    transition: all 0.5s;
+}
+#myChart{
+    max-height: 250px;
+    max-width: 250px;
+}
+#loader{
+    display: none;
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
