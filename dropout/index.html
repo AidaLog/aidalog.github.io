@@ -22,205 +22,208 @@
 
 <body>
 
-
-  <div class="content">
-
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <h2 class="mb-5 font-weight-light">Secondary School <br> Dropout Prediction</h2>
-
-          <div class="row">
-            <div class="col-lg-6 mb-5">
-              <form id="inputForm" class="form col-12">
-                <div class="row">
-                  <div class="col-12">
-
-                    <!-- Location Name -->
-                    <div class="form-group">
-                      <label for="location_name">Location Name:</label>
-                      <div class="mydict">
-                        <div>
-                          <label>
-                            <input type="radio" name="location_name" class="inputs" value="Urban" checked>
-                            <span>Urban</span>
-                          </label>
-                          <label>
-                            <input type="radio" name="location_name" class="inputs" value="Rural">
-                            <span>Rural</span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Home Language -->
-                    <div class="form-group">
-                      <label for="home_language">Home Language:</label>
-                      <div class="mydict">
-                        <div>
-                          <label>
-                            <input type="radio" name="home_language" class="inputs" value="Kiswahili" checked>
-                            <span>Kiswahili</span>
-                          </label>
-                          <label>
-                            <input type="radio" name="home_language" class="inputs" value="English">
-                            <span>English</span>
-                          </label>
-                          <label>
-                            <input type="radio" name="home_language" class="inputs" value="Native language">
-                            <span>Native language</span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Gender -->
-                    <div class="form-group">
-                      <label for="gender">Gender:</label>
-                      <div class="mydict">
-                        <div>
-                          <label>
-                            <input type="radio" name="gender" class="inputs" value="Male" checked>
-                            <span>Male</span>
-                          </label>
-                          <label>
-                            <input type="radio" name="gender" class="inputs" value="Female">
-                            <span>Female</span>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Grade -->
-                    <div class="form-group">
-                      <label for="grade">Grade</label>
-                      <div class="mydict">
-                        <div>
-                          <label>
-                            <input type="radio" name="grade" class="inputs" value="Form One" checked>
-                            <span>Form One</span>
-                          </label>
-                          <label>
-                            <input type="radio" name="grade" class="inputs" value="Form Two">
-                            <span>Form Two</span>
-                          </label>
-                          <label>
-                            <input type="radio" name="grade" class="inputs" value="Form Three">
-                            <span>Form Three</span>
-                          </label>
-                          <label>
-                            <input type="radio" name="grade" class="inputs" value="Form Four">
-                            <span>Form Four</span>
-                          </label>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                      <label for="hh_occupation">Household Occupation:</label>
-                      <select id="hh_occupation" name="hh_occupation" class="form-control data-input">
-                        <option value="1">Unemployed</option>
-                        <option value="2">Agriculture</option>
-                        <option value="3">Self-employed</option>
-                        <option value="4">Public sector</option>
-                        <option value="5">Private sector</option>
-                        <option value="6">Housewife</option>
-                      </select>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <h2 class="mb-5 font-weight-light">Secondary School <br> Dropout Prediction</h2>
+        <div class="row">
+          <form class="col-md-5 mb-5" class="form">
+            <div class="row">
+              <div class="col">
+                <!-- Location Name -->
+                <div class="form-group">
+                  <label for="location_name">Location Name:</label>
+                  <div class="mydict">
+                    <div>
+                      <label>
+                        <input type="radio" name="location_name" class="inputs" value="Urban" checked>
+                        <span>Urban</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="location_name" class="inputs" value="Rural">
+                        <span>Rural</span>
+                      </label>
                     </div>
                   </div>
+                </div>
 
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="hh_edu">Household Education:</label>
-                      <select id="hh_edu" name="hh_edu" class="form-control data-input">
-                        <option value="0">None</option>
-                        <option value="1">Primary</option>
-                        <option value="2">Secondary</option>
-                        <option value="3">Postsecondary</option>
-                      </select>
-                    </div>
-
-
-
-                    <div class="form-group">
-                      <label for="mothers_edu">Mother's Education:</label>
-                      <select id="mothers_edu" name="mothers_edu" class="form-control data-input">
-                        <option value="0">None</option>
-                        <option value="1">Primary</option>
-                        <option value="2">Secondary</option>
-                        <option value="3">Postsecondary</option>
-                      </select>
+                <!-- Home Language -->
+                <div class="form-group">
+                  <label for="home_language">Home Language:</label>
+                  <div class="mydict">
+                    <div>
+                      <label>
+                        <input type="radio" name="home_language" class="inputs" value="Kiswahili" checked>
+                        <span>Kiswahili</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="home_language" class="inputs" value="English">
+                        <span>English</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="home_language" class="inputs" value="Native language">
+                        <span>Native language</span>
+                      </label>
                     </div>
                   </div>
+                </div>
 
-                  
+                <!-- Gender -->
+                <div class="form-group">
+                  <label for="gender">Gender:</label>
+                  <div class="mydict">
+                    <div>
+                      <label>
+                        <input type="radio" name="gender" class="inputs" value="Male" checked>
+                        <span>Male</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="gender" class="inputs" value="Female">
+                        <span>Female</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
 
-                  <div class="form-group col-md-6">
-                    <label for="meansToSchool">Means to School:</label>
-                    <select id="meansToSchool" name="meansToSchool" class="form-control data-input">
-                      <option value="1">Walk</option>
-                      <option value="2">Bicycle/motorbike</option>
-                      <option value="3">Public transport</option>
-                      <option value="4">Private car</option>
+                <!-- Grade -->
+                <div class="form-group">
+                  <label for="grade">Grade</label>
+                  <div class="mydict">
+                    <div>
+                      <label>
+                        <input type="radio" name="grade" class="inputs" value="Form One" checked>
+                        <span>Form One</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="grade" class="inputs" value="Form Two">
+                        <span>Form Two</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="grade" class="inputs" value="Form Three">
+                        <span>Form Three</span>
+                      </label>
+                      <label>
+                        <input type="radio" name="grade" class="inputs" value="Form Four">
+                        <span>Form Four</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </form>
+
+          <form class="col-md-4 mb-5" class="form">
+            <div class="row">
+              <div class="col">
+                <!-- House hold Occupation -->
+                <div class="form-group">
+                  <label for="hh_occupation">Household Occupation:</label>
+
+                  <div class="select">
+                    <select name="hh_occupation" id="hh_occupation" class="inputs">
+                      <option value="Unemployed">Unemployed</option>
+                      <option value="Agriculture">Agriculture</option>
+                      <option value="Self-employed">Self-employed</option>
+                      <option value="Public sector">Public sector</option>
+                      <option value="Private sector">Private sector</option>
+                      <option value="Housewife">Housewife</option>
                     </select>
                   </div>
-                  <!-- </div> -->
                 </div>
-              </form>
+
+                <!-- House hold education -->
+                <div class="form-group col-md-6">
+                  <div class="form-group">
+                    <label for="hh_edu">Household Education:</label>
+                    <div class="select">
+                      <select id="hh_edu" name="hh_edu" class="form-control data-input">
+                        <option value="None">None</option>
+                        <option value="Primary">Primary</option>
+                        <option value="Secondary">Secondary</option>
+                        <option value="Postsecondary">Post Secondary</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Mothers Education -->
+                <div class="form-group">
+                  <label for="mothers_edu">Mother's Education:</label>
+                  <div class="select">
+                    <select id="mothers_edu" name="mothers_edu" class="form-control data-input">
+                      <option value="None">None</option>
+                      <option value="Primary">Primary</option>
+                      <option value="Secondary">Secondary</option>
+                      <option value="Postsecondary">Postsecondary</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Means to School -->
+                <div class="form-group col-md-6">
+                  <label for="meansToSchool">Means to School:</label>
+                  <div class="select">
+                    <select id="meansToSchool" name="meansToSchool" class="form-control data-input">
+                      <option value="Walk">Walk</option>
+                      <option value="Bicycle/motorbike">Bicycle/motorbike</option>
+                      <option value="Public transport">Public transport</option>
+                      <option value="Private car">Private car</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
+          </form>
 
-            <div class="col-md-4 mb-5">
-              <form id="inputForm" class="form">
 
-                <div class="form-group">
-                  <label for="hh_size">Household Size:</label>
-                  <div class="range-container">
-                    <input type="range" id="h_size" class="range data-input" max="20" min="0" value="1">
-                    <label for="range">1</label>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="school_distanceKm">School Distance (Km):</label>
-                  <div class="range-container">
-                    <input type="range" id="school_distance" class="range data-input" max="100" min="0" value="1">
-                    <label for="range">1</label>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="age">Age:</label>
-                  <div class="range-container">
-                    <input type="range" id="age" class="range data-input" max="20" min="10" value="11">
-                    <label for="range">11</label>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="hh_children">Household Children:</label>
-                  <div class="range-container">
-                    <input type="range" id="hh_children" class="range data-input" max="20" min="0" value="1">
-                    <label for="range">1</label>
-                  </div>
-                </div>
-
-              </form>
+          <div class="form-group">
+            <label for="hh_size">Household Size:</label>
+            <div class="range-container">
+              <input type="range" id="h_size" class="range data-input" max="20" min="0" value="1">
+              <label for="range">1</label>
             </div>
-
-            <div class="col-lg-3 text-center">
-              <h3 class="mb-4">Results.</h3>
-              <p><span id="textResult">Waiting for response</span></p>
-              <canvas id="myChart"></canvas>
-            </div>
-
-
           </div>
 
+          <div class="form-group">
+            <label for="school_distanceKm">School Distance (Km):</label>
+            <div class="range-container">
+              <input type="range" id="school_distance" class="range data-input" max="100" min="0" value="1">
+              <label for="range">1</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Age:</label>
+            <div class="range-container">
+              <input type="range" id="age" class="range data-input" max="20" min="10" value="11">
+              <label for="range">11</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="hh_children">Household Children:</label>
+            <div class="range-container">
+              <input type="range" id="hh_children" class="range data-input" max="20" min="0" value="1">
+              <label for="range">1</label>
+            </div>
+          </div>
+
+          </form>
         </div>
+
+        <div class="col-lg-3 text-center">
+          <h3 class="mb-4">Results.</h3>
+          <p><span id="textResult">Waiting for response</span></p>
+          <canvas id="myChart"></canvas>
+        </div>
+
+
       </div>
     </div>
   </div>
-
+  </div>
 
 
 
