@@ -60,7 +60,7 @@
                     </div>
                     <h3 class="font-weight-lighter my-3" id="dropout-message">👋 Welcome</h3>
                     <h5 class="font-weight-lighter" id="probability_value"></h5>
-                    <span class="icon-link float-right">
+                    <span class="btn icon-link float-right" data-toggle="modal" data-target="#exampleModal">
                       <span id="model">model</span>
                       <svg class="bi" width="1em" height="1em">
                         <use xlink:href="#chevron-right" />
@@ -287,6 +287,38 @@
 
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Select default model</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="list-group">
+            <!-- <a href="#" class="list-group-item list-group-item-action candidate_model" aria-current="true">AdaBoost</a> -->
+            <a href="#" class="list-group-item list-group-item-action candidate_model">BaggingClassifier</a>
+            <a href="#" class="list-group-item list-group-item-action candidate_model">DecisionTree</a>
+            <a href="#" class="list-group-item list-group-item-action candidate_model">GaussianNaiveBayes</a>
+            <a href="#" class="list-group-item list-group-item-action candidate_model">GradientBoostingClassifier</a>
+            <a href="#" class="list-group-item list-group-item-action candidate_model">KNeighborsClassifier</a>
+            <!-- <a href="#" class="list-group-item list-group-item-action candidate_model">LinearDiscriminantAnalysis</a> -->
+            <a href="#" class="list-group-item list-group-item-action candidate_model">LogisticRegression</a>
+            <a href="#" class="list-group-item list-group-item-action candidate_model">MultilayerPerceptron</a>
+            <a href="#" class="list-group-item list-group-item-action candidate_model">RandomForest</a>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>

@@ -1,8 +1,12 @@
 const URL = "https://oyster-app-c8hnb.ondigitalocean.app/";
 var default_model = "RandomForest";
-
+var models = null;
 
 $(document).ready(() => {
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 
     loadDefaultModel();
 
@@ -42,8 +46,13 @@ $(document).ready(() => {
             console.log("Error: " + error.status + " " + error.data);
         });
     });
-});
 
+    $(".candidate_model").on("click", () => {
+        // get html of the clicked element
+        var model = $(event.target).html();
+        setDefaultModel(model);
+    });
+});
 
 
 function sendPostRequest(formValues) {
@@ -133,10 +142,10 @@ function updateChart(newData) {
 }
 
 function update_bar_color(status) {
-    if(status == 'No'){
+    if (status == 'No') {
         //  replace class name bg-secondary or bg-danger wirh bg-success
         $("#bar").removeClass("bg-danger").addClass("bg-success") || $("#bar").removeClass("bg-secondary").addClass("bg-success");
-    }else{
+    } else {
         $("#bar").removeClass("bg-success").addClass("bg-danger") || $("#bar").removeClass("bg-secondary").addClass("bg-danger");
     }
 }
@@ -168,12 +177,18 @@ function loadDefaultModel() {
     $("#model").html(default_model);
 }
 
+// Function to set default model
+function setDefaultModel(model) {
+    default_model = model;
+    localStorage.setItem("default_model", model);
+    $("#model").html(default_model);
+}
+
 
 // Function to return probabilities for a given model name
 function getProbabilitiesForModel(data, modelName) {
     return data.predictions[modelName].predicted_probabilities;
 }
-
 
 function render_results(data) {
     var predicted_class = data.predictions[default_model].predicted_class;
