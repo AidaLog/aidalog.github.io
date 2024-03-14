@@ -59,14 +59,15 @@ select {
     outline: 0;
     box-shadow: none;
     border: 1 solid black !important;
-    background: #6d87a0;
+    background: #efefef00;
     background-image: none;
     flex: 1;
     padding: 0 .5em;
-    color: #7d7d7d;
+    color: #9a9a9a;
     cursor: pointer;
     font-size: 1em;
-    width: 100%; /* Add this line */
+    width: 100%;
+    /* Add this line */
 }
 
 select::-ms-expand {
@@ -76,12 +77,14 @@ select::-ms-expand {
 .select {
     position: relative;
     display: flex;
-    width: 20em;
+    width: 100%;
     height: 3em;
     line-height: 3;
-    background: #a7a7a7;
+    background: #fefefe;
+    border-bottom: 1px solid #c4c4c4;
     overflow: hidden;
     border-radius: .25em;
+    padding-left: 15px;
 }
 
 .select::after {
@@ -90,7 +93,7 @@ select::-ms-expand {
     top: 0;
     right: 0;
     padding: 0 1em;
-    background: #c4c4c4;
+    background: #ffffff;
     cursor: pointer;
     pointer-events: none;
     transition: .25s all ease;
@@ -98,4 +101,59 @@ select::-ms-expand {
 
 .select:hover::after {
     color: #7b7b7b;
+}
+
+
+/* range slider */
+
+.PB-range-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 70%;
+    height: 4px;
+    border-radius: 5px;
+    background: #D5DBE1;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.PB-range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #000000;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.PB-range-slider::-webkit-slider-thumb:hover {
+    box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.16);
+    transition: 0.3s ease-in-out;
+}
+
+.PB-range-slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #000000;
+    cursor: pointer;
+}
+
+.PB-range-slider-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+    padding: 0.5em 0.5em;
+    border: 1px solid #C6CACE;
+    box-shadow: 0px 1px 2px 0px #1F1E241F;
+}
+
+.PB-range-slidervalue {
+    font-weight: 600;
+    line-height: 25px;
 }
