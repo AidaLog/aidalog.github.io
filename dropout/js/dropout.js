@@ -1,17 +1,6 @@
 const URL = "https://oyster-app-c8hnb.ondigitalocean.app/";
 var default_model = "RandomForest";
 
-//  load or save default model to local storage
-function loadDefaultModel() {
-    if (localStorage.getItem("default_model")) {
-        default_model = localStorage.getItem("default_model");
-    } else {
-        localStorage.setItem("default_model", default_model);
-    }
-    $("#model").val(default_model);
-}
-
-
 
 $(document).ready(() => {
 
@@ -169,6 +158,16 @@ function calculateAverageProbabilities(data) {
     const average = probabilities.reduce((acc, val) => acc + val, 0) / probabilities.length;
     return average;
 }
+
+function loadDefaultModel() {
+    if (localStorage.getItem("default_model")) {
+        default_model = localStorage.getItem("default_model");
+    } else {
+        localStorage.setItem("default_model", default_model);
+    }
+    $("#model").html(default_model);
+}
+
 
 // Function to return probabilities for a given model name
 function getProbabilitiesForModel(data, modelName) {
