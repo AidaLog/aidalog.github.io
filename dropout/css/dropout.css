@@ -63,7 +63,7 @@ select {
     background-image: none;
     flex: 1;
     padding: 0 .5em;
-    color: #313131;
+    color: #7d7d7d;
     cursor: pointer;
     font-size: 1em;
     width: 100%; /* Add this line */
@@ -90,7 +90,7 @@ select::-ms-expand {
     top: 0;
     right: 0;
     padding: 0 1em;
-    background: #000000;
+    background: #c4c4c4;
     cursor: pointer;
     pointer-events: none;
     transition: .25s all ease;
