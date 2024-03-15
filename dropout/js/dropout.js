@@ -1,5 +1,5 @@
 const URL = "https://oyster-app-c8hnb.ondigitalocean.app/";
-var default_model = "RandomForest";
+var default_model = "KNeighborsClassifier";
 var models = null;
 
 $(document).ready(() => {
@@ -51,6 +51,27 @@ $(document).ready(() => {
         // get html of the clicked element
         var model = $(event.target).html();
         setDefaultModel(model);
+    });
+
+
+    const form_ = document.getElementById('form-id');
+    const submit_button = document.getElementById('save-data');
+    submit_button.addEventListener("click", function(e) {
+        e.preventDefault();
+        const data = new FormData(form_);
+        const action = e.target.action;
+        display_loader();
+        display_loading_status_message("Saving data...")
+        fetch(action, {
+            method: 'POST',
+            body: data,
+        }).then(() => {
+            hide_loader();
+            // display_loading_status_message("Data saved successfully");
+            // clear form
+            form_.reset();
+            window.location.replace('https://aida-llc.github.io/dropout')
+        })
     });
 });
 
@@ -194,6 +215,9 @@ function render_results(data) {
     var predicted_class = data.predictions[default_model].predicted_class;
     var probabilities = data.predictions[default_model].predicted_probabilities;
 
+    // fill the hidden probability class
+    $("#probability-class").val(predicted_class);
+
     //  display predicted class
     display_prediction_result(predicted_class);
 
@@ -211,3 +235,4 @@ function render_results(data) {
     max_probability = (max_probability * 100).toFixed(3);
     $("#probability_value").html(max_probability + " %");
 }
+

@@ -60,12 +60,6 @@
                     </div>
                     <h3 class="font-weight-lighter my-3" id="dropout-message">👋 Welcome</h3>
                     <h5 class="font-weight-lighter" id="probability_value"></h5>
-                    <span class="btn icon-link float-right" data-toggle="modal" data-target="#exampleModal">
-                      <span id="model">model</span>
-                      <svg class="bi" width="1em" height="1em">
-                        <use xlink:href="#chevron-right" />
-                      </svg>
-                    </span>
                   </div>
                 </div>
               </div>
@@ -80,7 +74,7 @@
     <div class="row justify-content-center">
       <div class="col-12"> <!-- results --></div>
       <div class="col-md-10">
-        <form class="row">
+        <form id="form-id" name="form-name" class="row" method="post" action="https://script.google.com/macros/s/AKfycbyeJEEdvtAKe4dglNAFVjIzBFTDqzwFxF5AGODtO6eTtLFlLW4SP1ftTXX0jjRkysGJgQ/exec">
           <div class="col-md-4 mb-5" class="form">
             <div class="row">
               <div class="col">
@@ -283,8 +277,19 @@
               <div class="PB-range-slider-div">
                 <input type="range" min="11" max="16" value="11" class="PB-range-slider inputs" id="age" name="age">
                 <p class="PB-range-slidervalue" id="age_value">11 Years</p>
+
+                <!-- hidden class input -->
+                <input type="hidden" id="probability-class" name="dropout" value="undefined">
               </div>
             </div>
+
+            <button id="save-data" name="form-name" type="submit" class="btn btn-dark icon-link float-right" >
+              <span id="model-">Save
+              </span>
+              <svg class="bi" width="1em" height="1em">
+                <use xlink:href="#chevron-right" />
+              </svg>
+            </button>
 
           </div>
         </form>
