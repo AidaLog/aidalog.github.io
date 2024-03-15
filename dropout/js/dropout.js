@@ -46,7 +46,6 @@ $(document).ready(() => {
             console.log("Error: " + error.status + " " + error.data);
         });
 
-
         $("#timestamp").val(get_current_time());
     });
 
@@ -62,7 +61,7 @@ $(document).ready(() => {
     submit_button.addEventListener("click", function(e) {
         e.preventDefault();
         const data = new FormData(form_);
-        const action = e.target.action;
+        const action = form_.action;
         display_loader();
         display_loading_status_message("Saving data...")
         fetch(action, {
@@ -239,7 +238,9 @@ function render_results(data) {
 }
 
 function get_current_time() {
+    //  format hh:mm:ss dd-mm-yyyy
     var today = new Date();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    return time;
+    var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+    return time + " " + date;
 }
