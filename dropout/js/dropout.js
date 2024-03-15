@@ -45,6 +45,9 @@ $(document).ready(() => {
             console.log(error);
             console.log("Error: " + error.status + " " + error.data);
         });
+
+
+        $("#timestamp").val(get_current_time());
     });
 
     $(".candidate_model").on("click", () => {
@@ -235,3 +238,8 @@ function render_results(data) {
     $("#probability_value").html(max_probability + " %");
 }
 
+function get_current_time() {
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return time;
+}
