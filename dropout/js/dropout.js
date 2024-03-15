@@ -70,7 +70,6 @@ $(document).ready(() => {
             // display_loading_status_message("Data saved successfully");
             // clear form
             form_.reset();
-            window.location.replace('https://aida-llc.github.io/dropout')
         })
     });
 });
