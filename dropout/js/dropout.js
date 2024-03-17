@@ -235,6 +235,7 @@ function render_results(data) {
     var max_probability = Math.max(...probabilities);
     max_probability = (max_probability * 100).toFixed(3);
     $("#probability_value").html(max_probability + " %");
+    $("#confidence").val(max_probability);
 }
 
 function get_current_time() {
