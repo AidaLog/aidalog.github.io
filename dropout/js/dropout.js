@@ -233,9 +233,10 @@ function render_results(data) {
 
     //  update the probability value
     var max_probability = Math.max(...probabilities);
+    var raw_max = max_probability;
     max_probability = (max_probability * 100).toFixed(3);
     $("#probability_value").html(max_probability + " %");
-    $("#confidence").val(max_probability);
+    $("#confidence").val(raw_max);
 }
 
 function get_current_time() {
