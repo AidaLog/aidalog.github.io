@@ -1,167 +1,457 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aida</title>
+  <base href="." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SnapShare - Interactive Image Platform</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
-    <style>
-        html,
-        body {
-            height: 100%;
-            margin: 0px;
-            padding: 0px;
-        }
+  <style>
+    :root {
+      --primary: #2196f3;
+      --secondary: #ff4081;
+      --dark: #212121;
+      --light: #f5f5f5;
+    }
 
-        #particles-js {
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            position: fixed;
-            z-index: 2;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .comfortaa-h1 {
-            font-family: "Comfortaa", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: lighter;
-            font-style: normal;
-            font-size: 8em;
-            color: #2d0c42;
-            padding-left: 50px;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+    }
 
-        /* Media query for screens 600px or smaller */
-        @media screen and (max-width: 600px) {
-            .comfortaa-h1 {
-                font-size: 6em;
-                /* Adjust the font size for smaller screens */
-            }
-        }
+    .app-container {
+      width: 100%;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
 
-        /* Media query for screens 400px or smaller */
-        @media screen and (max-width: 400px) {
-            .comfortaa-h1 {
-                font-size: 4em;
-                /* Further adjust the font size for even smaller screens */
-            }
-        }
-    </style>
+    .camera-interface {
+      background: #000;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    #camera-feed {
+      width: 100%;
+      height: 83%;
+      border-radius: 10px;
+      background: #000000;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      overflow-x: auto;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+    .filter-option {
+      padding: 8px 16px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .filter-option:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px 0;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .interaction-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: var(--secondary);
+      color: white;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .capture-btn {
+      position: absolute;
+      bottom: 20px;
+      /* Position the button 20px from the bottom */
+      right: 10%;
+      /* Position the button at 50% from the left */
+      transform: translateX(-50%);
+      /* Adjust position back by 50% of its width, centering it */
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      /* Make it round */
+      background: var(--secondary);
+      border: 4px solid white;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      z-index: 10;
+      /* Ensure it's above other elements */
+    }
+
+
+    /* Adding a loading indicator style */
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+      z-index: 1000;
+    }
+
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid var(--primary);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    #header {
+      margin-top: 10px;
+      text-align: center;
+      font-weight: lighter;
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://unpkg.com/@zxing/library@latest"></script>
 </head>
 
 <body>
-    <div id="particles-js">
+
+  <h1 id="header"> 📸 snap a Dev </h1>
+
+  <div class="app-container">
+    <div class="camera-interface">
+      <video id="camera-feed" autoplay playsinline></video>
+      <button class="capture-btn" id="captureBtn"></button>
     </div>
-    <div style="position: fixed; z-index: 2; top: 50%; left: 20%; transform: translate(-50%, -50%); text-align: left; ">
-        <h1 class="comfortaa-h1">Aidalog</h1>
-        
+
+    <div class="gallery" id="imageGallery">
+      <!-- Dynamic gallery items will be inserted here -->
     </div>
-</body>
 
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <div class="filter-bar" style="display:none;">
+      <button class="filter-option">Normal</button>
+      <button class="filter-option">Vintage</button>
+      <button class="filter-option">B&W</button>
+      <button class="filter-option">Sepia</button>
+      <button class="filter-option">Blur</button>
+    </div>
+  </div>
 
-<script>
 
-    particlesJS("particles-js", {
-        "particles": {
-            "number": {
-                "value": 100,
-                "density": {
-                    "enable": true,
-                    "value_area": 1000
-                }
-            },
-            "color": {
-                "value": ["#000000", "#800080", "#6a0dad", "#0000ff"]
-            },
 
-            "shape": {
-                "type": "circle",
-                "stroke": {
-                    "width": 0,
-                    "color": "#fff"
-                },
-                "polygon": {
-                    "nb_sides": 6
-                },
-                "image": {
-                    "src": "img/github.svg",
-                    "width": 100,
-                    "height": 100
-                }
-            },
-            "opacity": {
-                "value": 0.6,
-                "random": false,
-                "anim": {
-                    "enable": false,
-                    "speed": 1,
-                    "opacity_min": 0.1,
-                    "sync": false
-                }
-            },
-            "size": {
-                "value": 2,
-                "random": true,
-                "anim": {
-                    "enable": false,
-                    "speed": 40,
-                    "size_min": 0.1,
-                    "sync": false
-                }
-            },
-            "line_linked": {
-                "enable": true,
-                "distance": 120,
-                "color": "#800080",
-                "opacity": 0.4,
-                "width": 1
-            },
-        },
-        "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-                "onhover": {
-                    "enable": true,
-                    "mode": "grab"
-                },
-                "onclick": {
-                    "enable": false
-                },
-                "resize": true
-            },
-            "modes": {
-                "grab": {
-                    "distance": 140,
-                    "line_linked": {
-                        "opacity": 1
-                    }
-                },
-                "bubble": {
-                    "distance": 400,
-                    "size": 40,
-                    "duration": 2,
-                    "opacity": 8,
-                    "speed": 3
-                },
-                "repulse": {
-                    "distance": 200,
-                    "duration": 0.4
-                },
-                "push": {
-                    "particles_nb": 4
-                },
-                "remove": {
-                    "particles_nb": 2
-                }
-            }
-        },
-        "retina_detect": true
+  <!-- Updated scripts for Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getDatabase, ref, push, get, set } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBPxtuqx_3q6gtpAn7MeuVbqzJrjoKzR2s",
+      authDomain: "eddiefolio.firebaseapp.com",
+      databaseURL: "https://eddiefolio-default-rtdb.firebaseio.com/",
+      projectId: "eddiefolio",
+      storageBucket: "eddiefolio.appspot.com",
+      messagingSenderId: "1032147218531",
+      appId: "1:1032147218531:web:db600ddb1db0bcb4868856",
+      measurementId: "G-GV843X5GE9",
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    const IMGBB_API_KEY = "6d89f514c5d30477437572d45d5bee12";
+    const IMGBB_API_URL = "https://api.imgbb.com/1/upload";
+
+    // Show loading indicator
+    function showLoading() {
+      const loader = document.createElement("div");
+      loader.className = "loading";
+      loader.innerHTML = `<div class="loading-spinner"></div>`;
+      document.body.appendChild(loader);
+    }
+
+    // Hide loading indicator
+    function hideLoading() {
+      const loader = document.querySelector(".loading");
+      if (loader) {
+        loader.remove();
+      }
+    }
+
+    // Initialize gallery by fetching images from Firebase
+    async function initGallery() {
+      const gallery = document.getElementById("imageGallery");
+
+      // Get reference to the images node in Firebase
+      const imagesRef = ref(database, "images");
+
+      try {
+        // Get data from Firebase
+        const snapshot = await get(imagesRef);
+        if (snapshot.exists()) {
+          const images = snapshot.val();  // The data from Firebase
+
+          // Loop through each image object and create gallery items
+          Object.keys(images).forEach((key) => {
+            const img = images[key];
+            const item = createGalleryItem({
+              url: img.url,
+              likes: img.likes || 0,
+              comments: img.comments || 0,
+            }, key);  // Pass the image ID (key) to handle likes update
+            gallery.appendChild(item);
+          });
+        } else {
+          console.log("No images found in the database.");
+        }
+      } catch (error) {
+        console.error("Error fetching images from Firebase:", error);
+      }
+    }
+
+    // Create gallery item
+    function createGalleryItem(imgData, imageId) {
+      const div = document.createElement("div");
+      div.className = "gallery-item";
+
+      div.innerHTML = `
+    <img src="${imgData.url}" alt="User shared photograph" width="250" height="250">
+    <div class="interaction-bar" style="display:none;">
+      <button class="btn btn-primary like-btn">❤️ ${imgData.likes}</button>
+    </div>
+  `;
+
+      // Add event listeners
+      const likeBtn = div.querySelector(".like-btn");
+      // likeBtn.addEventListener("click", () => handleLike(imageId, imgData.likes));
+
+      return div;
+    }
+
+    // Handle like button click
+    async function handleLike(imageId, currentLikes) {
+      const newLikes = currentLikes + 1;
+
+      // Update likes count in Firebase
+      const imageRef = ref(database, `images/${imageId}`);
+      try {
+        // Update the likes count in Firebase
+        await set(imageRef, {
+          likes: newLikes
+        });
+
+        // Update the like button text in the UI
+        const likeBtn = document.querySelector(`.gallery-item[data-id='${imageId}'] .like-btn`);
+        likeBtn.textContent = `❤️ ${newLikes}`;
+      } catch (error) {
+        console.error("Error updating likes:", error);
+      }
+    }
+
+    // Filter selection
+    document.querySelectorAll(".filter-option").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelector(".filter-option.active")?.classList.remove("active");
+        btn.classList.add("active");
+      });
     });
-</script>
+
+    // Camera initialization
+    async function initCamera() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: "environment", width: { ideal: 1920 }, height: { ideal: 1080 } },
+        });
+        document.getElementById("camera-feed").srcObject = stream;
+      } catch (err) {
+        alert("Camera access is needed to use this feature.");
+        console.error(err);
+      }
+    }
+
+    // Image upload to ImgBB
+    async function uploadImage(base64Image) {
+      try {
+        showLoading();
+        const formData = new FormData();
+        formData.append("image", base64Image.split(",")[1]);
+        formData.append("key", IMGBB_API_KEY);
+
+        const response = await fetch(IMGBB_API_URL, { method: "POST", body: formData });
+        const result = await response.json();
+
+        if (result.success) {
+          const imageUrl = result.data.url;
+
+          const newImageRef = push(ref(database, "images"));
+          await set(newImageRef, { url: imageUrl, likes: 0, comments: [] });
+
+          return imageUrl;
+        } else {
+          throw new Error("Image upload failed");
+        }
+      } catch (error) {
+        console.error(error);
+        alert("Error uploading the image.");
+        return null;
+      } finally {
+        hideLoading();
+      }
+    }
+
+    // Capture photo and upload
+    document.getElementById("captureBtn").addEventListener("click", async () => {
+      const video = document.getElementById("camera-feed");
+      const canvas = document.createElement("canvas");
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(video, 0, 0);
+
+      const selectedFilter = document.querySelector(".filter-option.active");
+      if (selectedFilter) {
+        applyFilter(ctx, selectedFilter.textContent);
+      }
+
+      const base64Image = canvas.toDataURL("image/jpeg");
+      const uploadedUrl = await uploadImage(base64Image);
+
+      if (uploadedUrl) {
+        const gallery = document.getElementById("imageGallery");
+        const newItem = createGalleryItem({ url: uploadedUrl, likes: 0, comments: [] });
+        gallery.prepend(newItem);
+      }
+    });
+
+    // Apply filter
+    function applyFilter(ctx, filterName) {
+      const imageData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+      const data = imageData.data;
+
+      switch (filterName) {
+        case "B&W":
+          for (let i = 0; i < data.length; i += 4) {
+            const avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+            data[i] = data[i + 1] = data[i + 2] = avg;
+          }
+          break;
+        case "Sepia":
+          for (let i = 0; i < data.length; i += 4) {
+            const tr = data[i] * 0.393 + data[i + 1] * 0.769 + data[i + 2] * 0.189;
+            const tg = data[i] * 0.349 + data[i + 1] * 0.686 + data[i + 2] * 0.168;
+            const tb = data[i] * 0.272 + data[i + 1] * 0.534 + data[i + 2] * 0.131;
+            data[i] = tr > 255 ? 255 : tr;
+            data[i + 1] = tg > 255 ? 255 : tg;
+            data[i + 2] = tb > 255 ? 255 : tb;
+          }
+          break;
+      }
+
+      ctx.putImageData(imageData, 0, 0);
+    }
+
+    // Initialize app
+    window.addEventListener("load", () => {
+      initCamera();
+      initGallery();
+    });
+  </script>
+
+
+</body>
 
 </html>
