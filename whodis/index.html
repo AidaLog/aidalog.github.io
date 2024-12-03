@@ -139,6 +139,73 @@
             font-size: 3rem;
             color: #999;
         }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .left-panel {
+                width: 100%;
+                height: 30%;
+                border-right: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .right-panel {
+                width: 100%;
+                height: 50%;
+                padding: 2rem;
+            }
+
+            .name {
+                font-size: 2rem;
+            }
+
+            .bio {
+                font-size: 1rem;
+            }
+
+            .app-name {
+                font-size: 1.2rem;
+            }
+
+            .countdown {
+                font-size: 1rem;
+            }
+
+            .social-link svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .left-panel {
+                height: 40vh;
+            }
+
+            .name {
+                font-size: 1.5rem;
+            }
+
+            .bio {
+                font-size: 0.9rem;
+            }
+
+            .app-name {
+                font-size: 1rem;
+            }
+
+            .countdown {
+                font-size: 0.9rem;
+            }
+
+            .social-link svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
     </style>
 </head>
 
@@ -181,7 +248,7 @@
                     body: JSON.stringify({
                         contents: [{
                             parts: [{
-                                text: `Generate a catchy, funny bio with Gen Z slang for ${username}, a ${gender}. ${intro}. Mobile: ${mobile}, Instagram: ${instagram}. Tell people this is their chance to get the contact info and warn them that you're going to call yourself from their phone in 15 seconds. Make it witty and include a pun. Keep it under 200 characters.`
+                                text: `Generate a catchy, funny bio with Gen Z slang for ${username}, a ${gender}. ${intro}. Tell people this is their chance to get the contact or phone number info and warn them that you're going to call yourself from their phone in 15 seconds. this is all because we meet but no one care to share their contact details. Make it memorable and include a pun. Keep it under 200 characters.`
                             }]
                         }]
                     })
@@ -211,7 +278,7 @@
                         'Accept': 'application/json',
                     },
                     body: JSON.stringify({
-                        prompt: `Generate a catchy, funny bio with Gen Z slang for ${username}, a ${gender}. ${intro}. Mobile: ${mobile}, Instagram: ${instagram}. Tell people this is their chance to get the contact info. Include a warning that you're going to call yourself from their phone in 15 seconds. Use this format: "this is ${username}..." Make it witty and include a pun.`,
+                        prompt: `Generate a catchy, funny bio with Gen Z slang for ${username}, and gender ${gender}. Tell people this is their chance to get the contact or phone number info and warn them that you're going to call yourself from their phone in 15 seconds. To make it even more personal use this my intro: '${intro}' you can make a joke from it, if gender is female make the joke witty. Keep it under 200 characters.`,
                         data: username
                     }),
                 });
@@ -244,12 +311,12 @@
         window.onload = async function () {
             try {
                 user = {
-                    username: 'eddiegulay',
+                    username: 'Sikjunior Mrimi',
                     gender: 'male',
-                    intro: 'A tech enthusiast and avid coder',
-                    mobile: '+1234567890',
-                    instagram: '@eddiegulay',
-                    avatar_url: 'https://wallpaper.dog/large/20414737.jpg'
+                    intro: 'Graphics designer, Developer, Singer, Under 5.6feet tall.',
+                    mobile: '0672204508',
+                    instagram: '@meetsik_',
+                    avatar_url: 'https://pbs.twimg.com/media/Gduney-X0AAXSXp?format=jpg&name=large'
                 }
 
                 if (user) {
