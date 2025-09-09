@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #ea2a33;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-white">
+<div class="relative flex size-full min-h-screen flex-col justify-between group/design-root" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
+<div class="flex-grow">
+<header class="sticky top-0 z-10 bg-white/80 backdrop-blur-sm">
+<div class="flex items-center p-4 pb-2 justify-between">
+<a class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100/80" href="#">
+<span class="material-symbols-outlined text-gray-600">
+                arrow_back
+              </span>
+</a>
+<h2 class="text-[#181111] text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Pantry</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-[var(--primary-color)] text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<div class="text-white" data-icon="Plus" data-size="24px" data-weight="bold">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z" font-weight="bold"></path>
+</svg>
+</div>
+</button>
+</div>
+</div>
+<div class="px-4 py-3">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full">
+<div class="text-gray-400 flex border-none bg-gray-100 items-center justify-center pl-4 rounded-l-full border-r-0" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-full text-[#181111] focus:outline-0 focus:ring-0 border-none bg-gray-100 focus:border-none h-full placeholder:text-gray-400 px-4 text-base font-normal leading-normal" placeholder="Search ingredients" value=""/>
+</div>
+</label>
+</div>
+<div class="flex gap-3 px-4 pb-3 overflow-x-auto">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[var(--primary-color)] text-white px-4">
+<p class="text-sm font-medium leading-normal">All</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 px-4">
+<p class="text-[#181111] text-sm font-medium leading-normal">Vegetables</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 px-4">
+<p class="text-[#181111] text-sm font-medium leading-normal">Fruits</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 px-4">
+<p class="text-[#181111] text-sm font-medium leading-normal">Dairy</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 px-4">
+<p class="text-[#181111] text-sm font-medium leading-normal">Meat</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-gray-100 px-4">
+<p class="text-[#181111] text-sm font-medium leading-normal">Grains</p>
+</button>
+</div>
+</header>
+<main class="p-4">
+<h2 class="text-[#181111] text-xl font-bold leading-tight tracking-[-0.015em] pb-3">Your Ingredients</h2>
+<div class="grid grid-cols-[repeat(auto-fill,minmax(140px,1fr))] gap-4">
+<div class="relative group">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAimkBYAFCf721x5w6G9-uZmLhdXaWfsRk4fRGFykU3TG_idOiz0GoUoDNJIYLkmM_9Cv4LExzEm-1f_wp-mcbJT0oTUGCkA3fBqNcL1BdbeJ0EwmG_GFMmZwZW2uwfa1QQjBX6ZB9f0awOD5Q3EXYnoQuXwBopRTpSUnJOv0ZxvENVNxtgTIXzRT31S6vhL2kGxj3QXaZqnX4H0nIILs4TCjYEn6VHoAGO6yT2W9t-1Skkxc2XC_FeFNs_Oh_prUGBLeyOaxc2Vf-E");'></div>
+<div class="absolute inset-0 bg-black/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="w-10 h-10 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-white">
+<span class="material-symbols-outlined">check</span>
+</button>
+</div>
+<p class="text-[#181111] text-base font-medium leading-normal mt-2">Tomato</p>
+</div>
+<div class="relative group">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAN0eXotu6sEIEtI3t9b4KkocJkGbl1CR22pEn8q5Wu8E8KDyBNxbtvP3ZHKlmC4wfxa6_iPMJy4-Ah3Xo-Pmcbxc7NDuuyf-kR9BphXU4OmdEwf3iQ8BBHf8gAOUtA-fXsiMY487x_-C5KQUtv6TtPrbat3w7iGtA_JIJt_nrJxw3o2jk43xbe7J3qq7-JOXw9U03xWDL6fTeFyPOYyPg2sUKs6O98ubod3K_OSWo7DLwOs-qoY2ExdtVjsHS4pn-IX2yJoC7z20RX");'></div>
+<div class="absolute inset-0 bg-[var(--primary-color)]/70 rounded-xl flex items-center justify-center">
+<button class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[var(--primary-color)]">
+<span class="material-symbols-outlined">check</span>
+</button>
+</div>
+<p class="text-[#181111] text-base font-medium leading-normal mt-2">Cucumber</p>
+</div>
+<div class="relative group">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLHHyDSIxwDItV3qkdgyDmiQJVtbvdb1VlBFoj2b6kdmJAcqJIWo6Ch7zd3x_1kdlpZRD627d_CUkJpI-EF7hsFP6DzEOJwiHDQwz3_4LCnCXdCXltlgUcNU5nvz1XN4YCPis3P2v85wEtZUgfAq2kDGHLFry2JtouqhddeYzHUSsInPE9YBp0uBehnA584rALhPLiNNIld7hsg1_IloyqoYEIdZ4jyYT-uNyy4IXaSO_fuVSZSuwn56-FyP28MUlHqgkAUnWweeLR");'></div>
+<div class="absolute inset-0 bg-black/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="w-10 h-10 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-white">
+<span class="material-symbols-outlined">check</span>
+</button>
+</div>
+<p class="text-[#181111] text-base font-medium leading-normal mt-2">Milk</p>
+</div>
+<div class="relative group">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB6PeQkZ5w_mzGrE2NDbVG5KYOYfKHMKpyhrp0KRIWBtXVU327uipqegqUP7BAfBvySu98hD4iLiVc51SBYMiD8FInFhaMXFLYH5TnebbTBQrCoCqfk3QQ9RIxLsa3r2IAYM9kuCu-W70f9T0jfe94kNzZfj2g2CpqeGBqfs_-6PZMnEHXwK83_flvJfz-pAz9uwYvR8mUo6mLwmob9WCe1qj2Cd7w0G6qASFrl-153t_izNwKbgLwKj5lxMublYd5M9-NCCmhF6dd5");'></div>
+<div class="absolute inset-0 bg-[var(--primary-color)]/70 rounded-xl flex items-center justify-center">
+<button class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[var(--primary-color)]">
+<span class="material-symbols-outlined">check</span>
+</button>
+</div>
+<p class="text-[#181111] text-base font-medium leading-normal mt-2">Chicken Breast</p>
+</div>
+<div class="relative group">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCXNBxSGtI0NiV5aLLleumpF3cccdz30qZBc-DJKsTzXOyPQNjDCFJ4w-WLjhFNDRc9m2UjK-GTlla_oXaknuIdgpiI-h90QENcWM0ylxgI3jZjvGvVgXqn-crKwAZtbD9iKL0S6RWEsxJgAO-dbuywqdlKYcUiAwiNwLXF4nKkiqLhLDnqRHOGVbmmWEHZQIiuIr5zgqWWHzrqMplgOErDwEbwketodNmaIqLHKC5k8iC1o1L50w0fK9AiCNdDQAlB8HXHCxd6cA9n");'></div>
+<div class="absolute inset-0 bg-black/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="w-10 h-10 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center text-white">
+<span class="material-symbols-outlined">check</span>
+</button>
+</div>
+<p class="text-[#181111] text-base font-medium leading-normal mt-2">Rice</p>
+</div>
+</div>
+<div class="mt-8">
+<h2 class="text-[#181111] text-xl font-bold leading-tight tracking-[-0.015em] mb-4">Recipe Suggestions</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4 rounded-xl bg-gray-50 p-3">
+<div class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-xl flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCoc1LARyhnEOFNgmJD7zIKnyySfNDkwH9r4UlhPmB162HSIpz8isH4nQ-R-2yoUxTUDZ9FB3igLx4gYma3uwWu_0gSHipSt5pwMJEb9U1KlIO5U_Xz0cpMCaQG6Qo81RHOHcCPnf5FSU4d25c9QJClC5B7t22Bak11pSJZJIx12Z-gtgxSwrSgJXoFzliVlDnXzOY5Kv4SgxGUYr8XwnFHQ2qVbXs8mMdViwW1ppIOqRb8OMsF9JBipn3LdhJNgE2A99f2ULgqoUSr");'></div>
+<div class="flex-grow">
+<p class="text-[#181111] text-base font-bold leading-tight">Chicken and Tomato Pasta</p>
+<p class="text-gray-500 text-sm font-normal leading-normal mt-1">A simple pasta dish with chicken and fresh tomatoes.</p>
+<div class="flex items-center text-sm text-gray-500 mt-2">
+<span class="material-symbols-outlined text-base mr-1">timer</span>
+                    30 min
+                  </div>
+</div>
+</div>
+<div class="flex items-center gap-4 rounded-xl bg-gray-50 p-3">
+<div class="w-24 h-24 bg-center bg-no-repeat bg-cover rounded-xl flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCHcl6N72nmvyB5F-2YF090oUfqUlMLS_-jXm9HMVGXXKt-mLca2vGhvCU6bOqfh4sHwIVKp9hbzlvgrWU9Ct8cQuCSvYxS8-7sMZ0gTypMIC61Rp9ywAe682gIwsvx9lX3HX1cGFavmyT22l57DWOBdsVZfCbDAE2uwqOrBEVoe5AQjpcQs4NczLkGDPFwpyvbrcV4kSQS6oBgSOM2RgzvEqlg3ZJsovFyV0qQADvRaRVWiAu7GtWJsvSVy38x4FYTYqIGx0YZpp0V");'></div>
+<div class="flex-grow">
+<p class="text-[#181111] text-base font-bold leading-tight">Cucumber and Rice Salad</p>
+<p class="text-gray-500 text-sm font-normal leading-normal mt-1">A refreshing salad with cucumber and rice.</p>
+<div class="flex items-center text-sm text-gray-500 mt-2">
+<span class="material-symbols-outlined text-base mr-1">timer</span>
+                    45 min
+                  </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<div class="sticky bottom-0 left-0 right-0 bg-white shadow-[0_-1px_3px_rgba(0,0,0,0.05)]">
+<div class="px-4 py-3 flex justify-end">
+<button class="flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-4 bg-[var(--primary-color)] text-white text-base font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="truncate">Suggest Recipes</span>
+</button>
+</div>
+<nav class="flex justify-around border-t border-gray-100 bg-white pb-3 pt-2">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-[var(--primary-color)]" href="#">
+<span class="material-symbols-outlined">kitchen</span>
+<p class="text-xs font-medium leading-normal">Pantry</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-400" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+<p class="text-xs font-medium leading-normal">Shop</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-400" href="#">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<p class="text-xs font-medium leading-normal">Cook</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-400" href="#">
+<span class="material-symbols-outlined">group</span>
+<p class="text-xs font-medium leading-normal">Community</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-gray-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-xs font-medium leading-normal">Profile</p>
+</a>
+</nav>
+</div>
+</div>
+
+</body></html>
