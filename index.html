@@ -3,183 +3,131 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
-  <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Spline+Sans:wght@400;500;700" onload="this.rel='stylesheet'" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-  <title>NumNum Plan - Your Meal Planning App</title>
-  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+  <title>NumNum Plan - Smart Meal Planner</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <style type="text/tailwindcss">
-    :root {
-      --primary-50: #f0fdf4;
-      --primary-100: #dcfce7;
-      --primary-200: #bbf7d0;
-      --primary-300: #86efac;
-      --primary-400: #4ade80;
-      --primary-500: #22c55e;
-      --primary-600: #16a34a;
-      --primary-700: #15803d;
-      --primary-800: #166534;
-      --primary-900: #14532d;
-      --primary-950: #052e16;
-    }
-  </style>
   <style>
     body {
-      min-height: max(884px, 100dvh);
-      font-family: "Spline Sans", "Noto Sans", sans-serif;
+      font-family: "Spline Sans", sans-serif;
     }
-    .app-card:hover {
-      transform: translateY(-4px);
-    }
-    .app-card {
-      transition: all 0.3s ease;
+    .icon-circle {
+      @apply w-12 h-12 rounded-full flex items-center justify-center bg-green-100 text-green-600;
     }
   </style>
 </head>
-<body class="bg-gray-50">
-  <div class="relative flex size-full min-h-screen flex-col justify-between overflow-x-hidden">
-    <header class="bg-white shadow-md sticky top-0 z-10">
-      <div class="container mx-auto px-4 py-6">
-        <div class="flex items-center justify-between">
-          <h1 class="text-3xl font-bold text-green-600">NumNum Plan</h1>
-          <p class="text-gray-600">Your complete meal planning solution</p>
-        </div>
+<body class="bg-gray-50 text-gray-800">
+  <div class="flex flex-col min-h-screen">
+    
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-10">
+      <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <h1 class="text-2xl font-bold text-green-600">NumNum Plan</h1>
+        <span class="text-sm text-gray-500">Smart meal planning made simple</span>
       </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8 flex-grow">
-      <section class="mb-10">
-        <h2 class="text-2xl font-bold text-gray-800 mb-6">App Navigation</h2>
-        <p class="text-gray-600 mb-8">Welcome to NumNum Plan! Navigate to different sections of the application using the links below.</p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Welcome & Onboarding -->
-          <a href="welcome_&_onboarding/code.html" class="app-card block bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-            <div class="p-6">
-              <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <span class="material-symbols-outlined text-green-600">home</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Welcome & Onboarding</h3>
-              <p class="text-gray-600">Get started with NumNum Plan and learn how to use the app.</p>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 flex-grow space-y-12">
+
+      <!-- Navigation Grid -->
+      <section>
+        <h2 class="text-xl font-semibold mb-4">Explore the App</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+          <!-- Welcome -->
+          <a href="welcome_&_onboarding/code.html" class="flex items-center p-4 bg-white rounded-xl border border-gray-200 hover:border-green-400 transition">
+            <div class="icon-circle">
+              <span class="material-symbols-outlined">home</span>
             </div>
-            <div class="px-6 py-3 bg-gray-50 border-t border-gray-200">
-              <span class="text-green-600 font-medium flex items-center">Get Started <span class="material-symbols-outlined ml-1">arrow_forward</span></span>
-            </div>
-          </a>
-          
-          <!-- Pantry & Ingredient Tracker -->
-          <a href="pantry_&_ingredient_tracker/code.html" class="app-card block bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-            <div class="p-6">
-              <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <span class="material-symbols-outlined text-green-600">kitchen</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Pantry & Ingredient Tracker</h3>
-              <p class="text-gray-600">Manage your pantry and track your ingredients.</p>
-            </div>
-            <div class="px-6 py-3 bg-gray-50 border-t border-gray-200">
-              <span class="text-green-600 font-medium flex items-center">View Pantry <span class="material-symbols-outlined ml-1">arrow_forward</span></span>
+            <div class="ml-4">
+              <h3 class="font-semibold">Welcome</h3>
+              <p class="text-sm text-gray-500">Start here</p>
             </div>
           </a>
-          
-          <!-- Recipe & Cooking Flow 1 -->
-          <a href="recipe_&_cooking_flow_1/code.html" class="app-card block bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-            <div class="p-6">
-              <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <span class="material-symbols-outlined text-green-600">restaurant</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Recipe & Cooking Flow</h3>
-              <p class="text-gray-600">Browse and discover recipes for your next meal.</p>
+
+          <!-- Pantry -->
+          <a href="pantry_&_ingredient_tracker/code.html" class="flex items-center p-4 bg-white rounded-xl border border-gray-200 hover:border-green-400 transition">
+            <div class="icon-circle">
+              <span class="material-symbols-outlined">kitchen</span>
             </div>
-            <div class="px-6 py-3 bg-gray-50 border-t border-gray-200">
-              <span class="text-green-600 font-medium flex items-center">Find Recipes <span class="material-symbols-outlined ml-1">arrow_forward</span></span>
+            <div class="ml-4">
+              <h3 class="font-semibold">Pantry</h3>
+              <p class="text-sm text-gray-500">Track ingredients</p>
             </div>
           </a>
-          
-          <!-- Recipe & Cooking Flow 2 -->
-          <a href="recipe_&_cooking_flow_2/code.html" class="app-card block bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-            <div class="p-6">
-              <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <span class="material-symbols-outlined text-green-600">menu_book</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Recipe Details</h3>
-              <p class="text-gray-600">View detailed recipe instructions and cooking guides.</p>
+
+          <!-- Recipes -->
+          <a href="recipe_&_cooking_flow_1/code.html" class="flex items-center p-4 bg-white rounded-xl border border-gray-200 hover:border-green-400 transition">
+            <div class="icon-circle">
+              <span class="material-symbols-outlined">restaurant</span>
             </div>
-            <div class="px-6 py-3 bg-gray-50 border-t border-gray-200">
-              <span class="text-green-600 font-medium flex items-center">View Details <span class="material-symbols-outlined ml-1">arrow_forward</span></span>
+            <div class="ml-4">
+              <h3 class="font-semibold">Recipes</h3>
+              <p class="text-sm text-gray-500">Get suggestions</p>
             </div>
           </a>
-          
-          <!-- Shopping List & Deals 1 -->
-          <a href="shopping_list_&_deals_1/code.html" class="app-card block bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-            <div class="p-6">
-              <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <span class="material-symbols-outlined text-green-600">shopping_cart</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Shopping List</h3>
-              <p class="text-gray-600">Manage your shopping list for your next grocery trip.</p>
+
+          <!-- Shopping -->
+          <a href="shopping_list_&_deals_1/code.html" class="flex items-center p-4 bg-white rounded-xl border border-gray-200 hover:border-green-400 transition">
+            <div class="icon-circle">
+              <span class="material-symbols-outlined">shopping_cart</span>
             </div>
-            <div class="px-6 py-3 bg-gray-50 border-t border-gray-200">
-              <span class="text-green-600 font-medium flex items-center">View List <span class="material-symbols-outlined ml-1">arrow_forward</span></span>
+            <div class="ml-4">
+              <h3 class="font-semibold">Shopping List</h3>
+              <p class="text-sm text-gray-500">Plan groceries</p>
             </div>
           </a>
-          
-          <!-- Shopping List & Deals 2 -->
-          <a href="shopping_list_&_deals_2/code.html" class="app-card block bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-            <div class="p-6">
-              <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <span class="material-symbols-outlined text-green-600">sell</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Deals & Offers</h3>
-              <p class="text-gray-600">Find special deals and offers on grocery items.</p>
+
+          <!-- Deals -->
+          <a href="shopping_list_&_deals_2/code.html" class="flex items-center p-4 bg-white rounded-xl border border-gray-200 hover:border-green-400 transition">
+            <div class="icon-circle">
+              <span class="material-symbols-outlined">sell</span>
             </div>
-            <div class="px-6 py-3 bg-gray-50 border-t border-gray-200">
-              <span class="text-green-600 font-medium flex items-center">View Deals <span class="material-symbols-outlined ml-1">arrow_forward</span></span>
+            <div class="ml-4">
+              <h3 class="font-semibold">Deals</h3>
+              <p class="text-sm text-gray-500">Save on items</p>
             </div>
           </a>
-          
-          <!-- Community Sharing & Leaderboard -->
-          <a href="community_sharing_&_leaderboard/code.html" class="app-card block bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-            <div class="p-6">
-              <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                <span class="material-symbols-outlined text-green-600">groups</span>
-              </div>
-              <h3 class="text-xl font-bold text-gray-800 mb-2">Community Hub</h3>
-              <p class="text-gray-600">Connect with other users, share recipes, and view leaderboards.</p>
+
+          <!-- Community (can be optional later) -->
+          <a href="community_sharing_&_leaderboard/code.html" class="flex items-center p-4 bg-white rounded-xl border border-gray-200 hover:border-green-400 transition">
+            <div class="icon-circle">
+              <span class="material-symbols-outlined">groups</span>
             </div>
-            <div class="px-6 py-3 bg-gray-50 border-t border-gray-200">
-              <span class="text-green-600 font-medium flex items-center">Join Community <span class="material-symbols-outlined ml-1">arrow_forward</span></span>
+            <div class="ml-4">
+              <h3 class="font-semibold">Community</h3>
+              <p class="text-sm text-gray-500">Share & connect</p>
             </div>
           </a>
         </div>
       </section>
 
+      <!-- Overview -->
       <section>
-        <h2 class="text-2xl font-bold text-gray-800 mb-6">App Overview</h2>
-        <div class="bg-white rounded-lg shadow-lg p-6">
-          <p class="text-gray-700 mb-4">NumNum Plan is your complete meal planning solution that helps you:</p>
-          <ul class="list-disc pl-6 text-gray-600 space-y-2 mb-6">
-            <li>Track ingredients in your pantry</li>
-            <li>Discover new recipes based on what you have</li>
-            <li>Create and manage shopping lists</li>
-            <li>Find the best deals on ingredients</li>
-            <li>Follow cooking instructions step by step</li>
-            <li>Share your recipes with the community</li>
+        <h2 class="text-xl font-semibold mb-4">How NumNum Plan Helps You</h2>
+        <div class="bg-white rounded-xl border border-gray-200 p-6 space-y-4">
+          <ul class="list-disc pl-6 text-gray-600 space-y-2">
+            <li>Track pantry items and expiry dates</li>
+            <li>Get smart meal suggestions</li>
+            <li>Auto-generate shopping lists</li>
+            <li>Save money with smarter planning</li>
           </ul>
-          <p class="text-gray-700">Start your culinary journey by clicking on any of the app sections above!</p>
+          <p class="text-gray-700">Stay organized and reduce waste with a planner that thinks ahead for you.</p>
         </div>
       </section>
+
     </main>
 
-    <footer class="bg-gray-800 text-white py-6">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <p>© 2025 NumNum Plan. All rights reserved.</p>
-          <div class="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" class="text-gray-300 hover:text-white">Privacy Policy</a>
-            <a href="#" class="text-gray-300 hover:text-white">Terms of Service</a>
-            <a href="#" class="text-gray-300 hover:text-white">Contact Us</a>
-          </div>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-6">
+      <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+        <p>© 2025 NumNum Plan</p>
+        <div class="flex space-x-4 mt-2 sm:mt-0">
+          <a href="#" class="hover:text-green-600">Privacy</a>
+          <a href="#" class="hover:text-green-600">Terms</a>
+          <a href="#" class="hover:text-green-600">Contact</a>
         </div>
       </div>
     </footer>
