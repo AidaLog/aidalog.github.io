@@ -7,6 +7,8 @@
 <title>Stitch Design</title>
 <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="/assets/site-nav.css">
+<script defer src="/assets/site-nav.js"></script>
 <style type="text/tailwindcss">
       :root {
         --primary-color: #ea2a33;
@@ -26,6 +28,20 @@
   </style>
   </head>
 <body class="bg-white">
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="/">NumNum Plan</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
+      <ul id="primary-nav" class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="welcome_&_onboarding/code.html">Welcome</a></li>
+        <li><a href="pantry_&_ingredient_tracker/code.html">Pantry</a></li>
+        <li><a href="recipe_&_cooking_flow_1/code.html" class="active">Recipes</a></li>
+        <li><a href="shopping_list_&_deals_1/code.html">Shopping</a></li>
+        <li><a href="community_sharing_&_leaderboard/code.html">Community</a></li>
+      </ul>
+    </div>
+  </nav>
 <div class="relative flex size-full min-h-screen flex-col justify-between group/design-root" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
 <div class="flex-grow">
 <header class="sticky top-0 z-10 bg-white/80 backdrop-blur-sm">

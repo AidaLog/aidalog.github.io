@@ -33,8 +33,25 @@
       min-height: max(884px, 100dvh);
     }
   </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/site-nav.css">
+  <script defer src="/assets/site-nav.js"></script>
   </head>
 <body class="bg-primary-50">
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="/">NumNum Plan</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
+      <ul id="primary-nav" class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="welcome_&_onboarding/code.html" class="active">Welcome</a></li>
+        <li><a href="pantry_&_ingredient_tracker/code.html">Pantry</a></li>
+        <li><a href="recipe_&_cooking_flow_1/code.html">Recipes</a></li>
+        <li><a href="recipe_&_cooking_flow_2/code.html">Recipe Details</a></li>
+        <li><a href="community_sharing_&_leaderboard/code.html">Community</a></li>
+      </ul>
+    </div>
+  </nav>
 <div class="relative flex size-full min-h-screen flex-col justify-between group/design-root overflow-x-hidden" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
 <div class="flex flex-grow flex-col justify-center items-center">
 <div class="text-center px-6">

@@ -1,0 +1,24 @@
+/* Shared site navigation styles */
+:root{
+  --nav-bg: #ffffff;
+  --nav-fg: #0f172a;
+  --nav-accent: #16a34a;
+}
+html.fade-out { opacity: 0; transition: opacity .18s ease-in; }
+html { scroll-behavior: smooth; }
+.site-nav{background:var(--nav-bg);box-shadow:0 1px 2px rgba(0,0,0,0.06);position:sticky;top:0;z-index:60}
+.site-nav .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem}
+.site-nav .brand{font-weight:700;color:var(--nav-accent);text-decoration:none;font-size:1.05rem}
+.site-nav .nav-links{display:flex;gap:.6rem;align-items:center;list-style:none;margin:0;padding:0}
+.site-nav .nav-links a{color:var(--nav-fg);text-decoration:none;padding:.4rem .6rem;border-radius:.375rem;font-weight:600}
+.site-nav .nav-links a.active{background:var(--nav-accent);color:white}
+.site-nav .nav-toggle{display:none;border:0;background:transparent;font-size:1.25rem}
+
+@media (max-width:900px){
+  .site-nav .nav-links{position:fixed;right:0;top:56px;background:var(--nav-bg);flex-direction:column;padding:0.75rem;border-left:1px solid rgba(0,0,0,0.04);min-width:200px;display:none}
+  .site-nav .nav-links.show{display:flex}
+  .site-nav .nav-toggle{display:block}
+}
+
+/* small accessible focus styles */
+.site-nav .nav-links a:focus{outline:2px solid rgba(16,185,129,0.18);outline-offset:2px}
